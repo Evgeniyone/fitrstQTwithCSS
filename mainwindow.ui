@@ -14,9 +14,24 @@
    <string>MainWindow</string>
   </property>
   <property name="styleSheet">
-   <string notr="true"/>
+   <string notr="true">#centralwidget {
+    background: rgba(32, 80, 96, 100);
+    border-image: url(:/images/login_bg.png);
+}
+QLabel { color: white; }
+QLineEdit { border-radius: 3px; }
+QPushButton {
+    color: white;
+    background-color: #27a9e3;
+    border-width: 0px;
+    border-radius: 3px;
+}
+QPushButton:hover { background-color: #66c011; }</string>
   </property>
   <widget class="QWidget" name="centralwidget">
+   <property name="styleSheet">
+    <string notr="true"/>
+   </property>
    <layout class="QVBoxLayout" name="verticalLayout">
     <property name="leftMargin">
      <number>0</number>
@@ -32,6 +47,11 @@
     </property>
     <item>
      <widget class="QWidget" name="topPanel" native="true">
+      <property name="styleSheet">
+       <string notr="true">#topPanel { 
+    background-color: qlineargradient(spread:reflect, x1:0.5, y1:0, x2:0, y2:0, stop:0 rgba(91, 204, 233, 100), stop:1 rgba(32, 80, 96, 100));
+}</string>
+      </property>
       <layout class="QHBoxLayout" name="horizontalLayout">
        <item>
         <widget class="QLabel" name="currentDateTime">
@@ -70,6 +90,16 @@
          <property name="text">
           <string/>
          </property>
+         <property name="icon">
+          <iconset resource="resources.qrc">
+           <normaloff>:/icons/restart_icon.png</normaloff>:/icons/restart_icon.png</iconset>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>50</width>
+           <height>50</height>
+          </size>
+         </property>
         </widget>
        </item>
        <item>
@@ -88,6 +118,16 @@
          </property>
          <property name="text">
           <string/>
+         </property>
+         <property name="icon">
+          <iconset resource="resources.qrc">
+           <normaloff>:/icons/shutdown_icon.png</normaloff>:/icons/shutdown_icon.png</iconset>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>50</width>
+           <height>50</height>
+          </size>
          </property>
         </widget>
        </item>
@@ -130,10 +170,13 @@
          </size>
         </property>
         <property name="styleSheet">
-         <string notr="true">border: 1px solid;</string>
+         <string notr="true"/>
         </property>
         <property name="text">
          <string/>
+        </property>
+        <property name="pixmap">
+         <pixmap resource="resources.qrc">:/images/logo.png</pixmap>
         </property>
        </widget>
       </item>
@@ -178,7 +221,10 @@
          </size>
         </property>
         <property name="styleSheet">
-         <string notr="true">#loginForm { border: 1px solid; }</string>
+         <string notr="true">#loginForm { 
+ background: rgba(0, 0, 0, 80);
+ border-radius: 8px;
+}</string>
         </property>
         <layout class="QVBoxLayout" name="verticalLayout_3">
          <property name="spacing">
@@ -219,9 +265,15 @@
            </item>
            <item>
             <widget class="QLineEdit" name="username">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
              <property name="minimumSize">
               <size>
-               <width>0</width>
+               <width>210</width>
                <height>25</height>
               </size>
              </property>
@@ -246,9 +298,15 @@
            </item>
            <item>
             <widget class="QLineEdit" name="password">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
              <property name="minimumSize">
               <size>
-               <width>0</width>
+               <width>210</width>
                <height>25</height>
               </size>
              </property>
@@ -306,6 +364,8 @@
    </layout>
   </widget>
  </widget>
- <resources/>
+ <resources>
+  <include location="resources.qrc"/>
+ </resources>
  <connections/>
 </ui>
